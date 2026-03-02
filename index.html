@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrea M. Erickson — Author</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:       #FDFAF0;
+      --cream-dark:  #F0ECCF;
+      --bark:        #8C4A2F;
+      --bark-lt:     #A85C3C;
+      --blue:        #5D7E94;
+      --blue-lt:     #7A9DB5;
+      --sage:        #7A9171;
+      --amber:       #B07D2A;
+      --ink:         #1E1510;
+      --ink-mid:     #3D2E22;
+      --ink-lite:    #7A6355;
+      --white:       #FEFCF8;
+
+      --serif: 'Playfair Display', Georgia, serif;
+      --body:  'Lora', Georgia, serif;
+
+      --max-w: 1100px;
+      --section-pad: 100px 24px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ──────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bark);
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      box-shadow: 0 2px 12px rgba(30,21,16,.25);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: .04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--body);
+      font-size: .9rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,.8);
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--blue-lt); }
+
+    /* ── Hero ─────────────────────────────────────────── */
+    #hero {
+      min-height: 92vh;
+      background: linear-gradient(150deg, #1A0E08 0%, #2A1608 50%, #18120A 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(93,126,148,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 15% 80%, rgba(122,145,113,.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: var(--max-w);
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-text { color: var(--cream); }
+
+    .hero-eyebrow {
+      font-size: .8rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--blue-lt);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--blue-lt);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(245,240,232,.78);
+      margin-bottom: 40px;
+      max-width: 440px;
+    }
+
+    .btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-family: var(--body);
+      font-size: .9rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      transition: all .25s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 500;
+    }
+    .btn-primary:hover { background: var(--blue-lt); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(93,126,148,.4); }
+
+    .btn-outline {
+      border: 1px solid rgba(253,250,240,.4);
+      color: var(--cream);
+    }
+    .btn-outline:hover { border-color: var(--blue-lt); color: var(--blue-lt); transform: translateY(-2px); }
+
+    /* Book cover placeholder */
+    .hero-book {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .book-cover {
+      width: 260px;
+      aspect-ratio: 2/3;
+      background: linear-gradient(135deg, #3D1A24 0%, #6B2D3E 40%, #8C3D52 100%);
+      border-radius: 4px 12px 12px 4px;
+      box-shadow:
+        -6px 6px 0 rgba(0,0,0,.35),
+        0 20px 60px rgba(0,0,0,.5),
+        inset -3px 0 8px rgba(0,0,0,.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book-cover::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: .4;
+    }
+
+    .book-cover-spine {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 12px;
+      background: rgba(0,0,0,.3);
+      border-radius: 4px 0 0 4px;
+    }
+
+    .book-cover-title {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--cream);
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .book-cover-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 12px;
+    }
+
+    .book-cover-sub {
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,.65);
+      text-align: center;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .book-cover-author {
+      position: absolute;
+      bottom: 24px;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+    }
+
+    /* placeholder note */
+    .cover-placeholder-note {
+      margin-top: 16px;
+      font-size: .75rem;
+      color: rgba(245,240,232,.35);
+      letter-spacing: .05em;
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* ── Section Shared ───────────────────────────────── */
+    section { padding: var(--section-pad); }
+
+    .inner { max-width: var(--max-w); margin: 0 auto; }
+
+    .section-label {
+      font-size: .75rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--bark);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .rule {
+      width: 56px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--bark), var(--blue));
+      margin-bottom: 40px;
+    }
+
+    /* ── Book Section ─────────────────────────────────── */
+    #book { background: var(--white); }
+
+    .book-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .book-img-wrap {
+      position: sticky;
+      top: 88px;
+    }
+
+    .book-placeholder {
+      width: 100%;
+      aspect-ratio: 2/3;
+      background: linear-gradient(160deg, var(--cream-dark) 0%, #ddd3c0 100%);
+      border-radius: 4px 12px 12px 4px;
+      border: 1px solid rgba(107,45,62,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: -4px 4px 0 rgba(107,45,62,.15), 0 8px 32px rgba(44,31,24,.12);
+    }
+
+    .book-placeholder-inner {
+      text-align: center;
+      padding: 24px;
+    }
+
+    .book-placeholder-icon {
+      width: 48px;
+      height: 64px;
+      border: 2px solid var(--ink-lite);
+      border-radius: 2px 6px 6px 2px;
+      margin: 0 auto 16px;
+      position: relative;
+    }
+
+    .book-placeholder-icon::before {
+      content: '';
+      position: absolute;
+      left: 4px; top: 4px; right: 4px; bottom: 4px;
+      border-top: 1px solid var(--ink-lite);
+      border-bottom: 1px solid var(--ink-lite);
+    }
+
+    .book-placeholder-text {
+      font-size: .75rem;
+      color: var(--ink-lite);
+      font-style: italic;
+    }
+
+    .book-content h2 { color: var(--bark); }
+
+    .book-meta {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .meta-chip {
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: 2px;
+      padding: 6px 14px;
+      font-size: .8rem;
+      letter-spacing: .05em;
+      color: var(--ink-mid);
+    }
+
+    .stars {
+      color: var(--amber);
+      font-size: 1.1rem;
+      letter-spacing: .05em;
+      margin-bottom: 4px;
+    }
+
+    .star-count { font-size: .85rem; color: var(--ink-lite); }
+
+    .book-synopsis {
+      color: var(--ink-mid);
+      margin-bottom: 32px;
+      font-size: 1.05rem;
+    }
+
+    .book-tagline {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--bark);
+      border-left: 3px solid var(--blue);
+      padding-left: 20px;
+      margin-bottom: 40px;
+    }
+
+    .buy-section h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: var(--ink-mid);
+    }
+
+    .buy-options {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .buy-card {
+      flex: 1;
+      min-width: 120px;
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: 4px;
+      padding: 20px 16px;
+      text-align: center;
+      transition: all .25s;
+      display: block;
+    }
+
+    .buy-card:hover {
+      border-color: var(--bark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(140,74,47,.15);
+    }
+
+    .buy-format {
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-lite);
+      margin-bottom: 6px;
+    }
+
+    .buy-price {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--bark);
+      margin-bottom: 8px;
+    }
+
+    .buy-link-text {
+      font-size: .78rem;
+      color: var(--blue);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* Reviews */
+    .reviews { margin-top: 56px; }
+
+    .reviews h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 32px;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .review-card {
+      background: var(--cream);
+      border-radius: 4px;
+      padding: 28px;
+      border-top: 3px solid var(--bark);
+    }
+
+    .review-stars { color: var(--amber); margin-bottom: 12px; font-size: .9rem; }
+
+    .review-text {
+      font-style: italic;
+      color: var(--ink-mid);
+      margin-bottom: 16px;
+      font-size: .95rem;
+      line-height: 1.7;
+    }
+
+    .review-author {
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-lite);
+    }
+
+    /* ── About Section ────────────────────────────────── */
+    #about {
+      background: linear-gradient(170deg, var(--cream) 0%, var(--cream-dark) 100%);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+    }
+
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--cream-dark);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(140,74,47,.1);
+    }
+
+    .about-photo-placeholder {
+      text-align: center;
+      color: var(--ink-lite);
+    }
+
+    .photo-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px dashed var(--ink-lite);
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .photo-note { font-size: .78rem; font-style: italic; }
+
+    .about-photo-frame {
+      position: absolute;
+      top: 16px; left: 16px; right: -16px; bottom: -16px;
+      border: 1px solid rgba(93,126,148,.3);
+      border-radius: 4px;
+      z-index: -1;
+    }
+
+    .about-content h2 { color: var(--ink); }
+
+    .about-text {
+      color: var(--ink-mid);
+      margin-bottom: 24px;
+    }
+
+    .about-quote {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--bark);
+      border-left: 3px solid var(--blue);
+      padding: 16px 20px;
+      background: rgba(253,250,240,.6);
+      border-radius: 0 4px 4px 0;
+      margin: 32px 0;
+    }
+
+    /* ── MS Section (within About) ───────────────────── */
+    .ms-section {
+      margin: 36px 0 32px;
+      padding: 32px;
+      background: rgba(93,126,148,.08);
+      border-radius: 6px;
+      border: 1px solid rgba(93,126,148,.2);
+    }
+
+    .ms-heading {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+
+    .ms-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .ms-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--white);
+      border: 1px solid rgba(93,126,148,.2);
+      border-radius: 4px;
+      transition: all .25s;
+    }
+
+    .ms-link:hover {
+      border-color: var(--blue);
+      transform: translateX(4px);
+      box-shadow: 0 4px 16px rgba(93,126,148,.15);
+    }
+
+    .ms-link-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      width: 40px;
+      text-align: center;
+    }
+
+    .ms-link-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--bark);
+      margin-bottom: 3px;
+    }
+
+    .ms-link-desc {
+      font-size: .82rem;
+      color: var(--ink-lite);
+      line-height: 1.4;
+    }
+
+    /* ── Blog Section ─────────────────────────────────── */
+    #blog { background: var(--white); }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .post-card {
+      background: var(--cream);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--cream-dark);
+      transition: all .3s;
+    }
+
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(30,21,16,.12);
+      border-color: rgba(93,126,148,.25);
+    }
+
+    .post-img {
+      height: 180px;
+      background: linear-gradient(135deg, var(--cream-dark), #d4c4b0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-lite);
+      font-style: italic;
+      font-size: .85rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .post-img-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(122,145,113,.06) 10px,
+        rgba(122,145,113,.06) 20px
+      );
+    }
+
+    .post-body { padding: 28px; }
+
+    .post-tag {
+      font-size: .7rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .post-title {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+
+    .post-excerpt {
+      font-size: .9rem;
+      color: var(--ink-lite);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .post-date {
+      font-size: .78rem;
+      color: var(--ink-lite);
+      letter-spacing: .05em;
+    }
+
+    .blog-cta {
+      text-align: center;
+      margin-top: 56px;
+    }
+
+    .btn-burgundy {
+      background: var(--bark);
+      color: var(--cream);
+    }
+    .btn-burgundy:hover { background: var(--bark-lt); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(140,74,47,.3); }
+
+    /* ── Contact Section ──────────────────────────────── */
+    #contact {
+      background: linear-gradient(170deg, var(--cream-dark) 0%, #ddd3be 100%);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-info h2 { margin-bottom: 16px; }
+
+    .contact-info .rule { margin-bottom: 28px; }
+
+    .contact-text {
+      color: var(--ink-mid);
+      margin-bottom: 40px;
+    }
+
+    .contact-links { display: flex; flex-direction: column; gap: 16px; }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--ink-mid);
+      font-size: .95rem;
+      transition: color .2s;
+    }
+
+    .contact-link:hover { color: var(--bark); }
+
+    .contact-link-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+
+    /* Form */
+    .contact-form {
+      background: var(--white);
+      border-radius: 6px;
+      padding: 44px;
+      box-shadow: 0 4px 24px rgba(44,31,24,.08);
+    }
+
+    .contact-form h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      margin-bottom: 28px;
+      color: var(--ink);
+    }
+
+    .form-group { margin-bottom: 20px; }
+
+    .form-label {
+      display: block;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-lite);
+      margin-bottom: 6px;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: 3px;
+      font-family: var(--body);
+      font-size: .95rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus { border-color: var(--bark); }
+
+    .form-textarea { min-height: 120px; resize: vertical; }
+
+    .form-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--bark);
+      color: var(--cream);
+      border: none;
+      border-radius: 3px;
+      font-family: var(--body);
+      font-size: .9rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all .25s;
+      margin-top: 8px;
+    }
+
+    .form-submit:hover { background: var(--bark-lt); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(140,74,47,.3); }
+
+    /* ── Footer ───────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      color: rgba(245,240,232,.5);
+      text-align: center;
+      padding: 40px 24px;
+      font-size: .85rem;
+    }
+
+    footer strong {
+      color: var(--cream);
+      font-family: var(--serif);
+      font-size: 1rem;
+    }
+
+    .footer-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--bark);
+      margin: 16px auto;
+      opacity: .5;
+    }
+
+    /* ── Responsive ───────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-book { display: none; }
+      .book-grid { grid-template-columns: 1fr; }
+      .book-img-wrap { position: static; display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-wrap { max-width: 320px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --section-pad: 72px 20px; }
+      nav { padding: 0 20px; }
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: .78rem; }
+      .contact-form { padding: 28px 20px; }
+    }
+
+    /* ── Scroll animation ─────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ─────────────────────────────────────── -->
+<nav>
+  <span class="nav-logo">Andrea M. Erickson</span>
+  <ul class="nav-links">
+    <li><a href="#book">The Book</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#blog">Writing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Author &amp; Storyteller</p>
+      <h1 class="hero-title">
+        Andrea M.<br/>Erickson
+      </h1>
+      <p class="hero-subtitle">
+        Writing stories of resilience, love, and the quiet courage it takes to keep moving forward — even when the path is uncertain.
+      </p>
+      <div class="btn-group">
+        <a href="#book" class="btn btn-primary">Discover the Book</a>
+        <a href="#about" class="btn btn-outline">About Andrea</a>
+      </div>
+    </div>
+
+    <div class="hero-book">
+      <div>
+        <img
+          src="book-cover.jpg"
+          alt="Black Boots: A Journey of Resilience and Love — by Andrea M. Erickson"
+          style="width:260px;border-radius:4px 12px 12px 4px;box-shadow:-6px 6px 0 rgba(0,0,0,.35),0 20px 60px rgba(0,0,0,.5);"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Book Section ────────────────────────────────────── -->
+<section id="book">
+  <div class="inner">
+    <div class="book-grid">
+
+      <!-- Sticky cover -->
+      <div class="book-img-wrap fade-up">
+        <img
+          src="book-cover.jpg"
+          alt="Black Boots: A Journey of Resilience and Love — by Andrea M. Erickson"
+          style="width:100%;border-radius:4px 12px 12px 4px;box-shadow:-4px 4px 0 rgba(107,45,62,.15),0 8px 32px rgba(44,31,24,.18);"
+        />
+      </div>
+
+      <!-- Book details -->
+      <div class="book-content fade-up">
+        <p class="section-label">Now Available</p>
+        <h2 class="section-title">Black Boots</h2>
+        <p style="font-family:var(--serif);font-style:italic;color:var(--ink-mid);margin-bottom:20px;font-size:1.05rem;">A Journey of Resilience and Love</p>
+        <div class="rule"></div>
+
+        <div class="book-meta">
+          <span class="meta-chip">Published Jan 24, 2022</span>
+          <span class="meta-chip">156 Pages</span>
+          <span class="meta-chip">Semi-Autobiographical</span>
+        </div>
+
+        <div style="margin-bottom:28px;">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <span class="star-count">4.9 / 5 on Amazon</span>
+        </div>
+
+        <p class="book-synopsis">
+          <em>Black Boots</em> is a story about a young woman coming of age while living with the often hidden — but always lurking — presence of a chronic illness. As Goldie navigates loss, love, and self-discovery, she travels through Europe, Florida, and the back roads of New England, encountering a vivid cast of characters who shape her along the way.
+        </p>
+        <p class="book-synopsis">
+          Woven throughout is the gradually relentless presence of Multiple Sclerosis: how it shadows ordinary moments, how it changes plans, and how — against all odds — Goldie finds a way to not just survive, but to thrive. Beautifully written and deeply human, this is more than a memoir of illness. It is a portrait of the enduring power of community, love, and an unbreakable spirit.
+        </p>
+
+        <div class="book-tagline">
+          "You are more than your monster."
+        </div>
+
+        <div class="buy-section">
+          <h3>Get your copy</h3>
+          <div class="buy-options">
+            <a class="buy-card" href="https://www.amazon.com/Black-Boots-Journey-Resilience-Love-ebook/dp/B09R98D2GL" target="_blank" rel="noopener">
+              <div class="buy-format">E-Book</div>
+              <div class="buy-price">$3.99</div>
+              <div class="buy-link-text">Buy on Amazon →</div>
+            </a>
+            <a class="buy-card" href="https://www.amazon.com/Black-Boots-Journey-Resilience-Love/dp/1669807878" target="_blank" rel="noopener">
+              <div class="buy-format">Paperback</div>
+              <div class="buy-price">$16.99</div>
+              <div class="buy-link-text">Buy on Amazon →</div>
+            </a>
+            <a class="buy-card" href="https://www.amazon.com/Black-Boots-Journey-Resilience-Love/dp/1669807878" target="_blank" rel="noopener">
+              <div class="buy-format">Hardcover</div>
+              <div class="buy-price">$28.99</div>
+              <div class="buy-link-text">Buy on Amazon →</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Reader Reviews -->
+        <div class="reviews">
+          <h3>What Readers Are Saying</h3>
+          <div class="review-grid">
+            <div class="review-card">
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">"She speaks from the heart and uses powerful imagery to convey what she was experiencing as the disease progressed. I was in awe of her tenacity and positive outlook."</p>
+              <p class="review-author">— Amazon Reviewer</p>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">"What makes it special is the vibrancy of the characters and their experiences. The book can easily be read in a day and will leave you feeling more compassionate."</p>
+              <p class="review-author">— Amazon Reviewer</p>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="review-text">"A wonderful message about how she struggled but found a way to thrive. Dedicated to every person battling a chronic illness — it will resonate deeply."</p>
+              <p class="review-author">— Amazon Reviewer</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About Section ───────────────────────────────────── -->
+<section id="about">
+  <div class="inner">
+    <div class="about-grid">
+
+      <div class="about-content fade-up">
+        <p class="section-label">The Author</p>
+        <h2 class="section-title">About Andrea</h2>
+        <div class="rule"></div>
+
+        <p class="about-text">
+          Andrea M. Erickson is an author whose writing draws from the full spectrum of lived experience — joy and grief, connection and solitude, illness and resilience. Her work is grounded in honesty and animated by a deep belief in the power of story to build bridges between people.
+        </p>
+        <p class="about-text">
+          In <em>Black Boots: A Journey of Resilience and Love</em>, Andrea draws on her own experience with Multiple Sclerosis to craft a narrative that is at once deeply personal and universally human. Her protagonist Goldie's journey across continents and through heartbreak mirrors the kind of courage that quiet, ordinary people demonstrate every day — without recognition or fanfare.
+        </p>
+
+        <div class="about-quote">
+          Writing is how I make sense of things — how I find the thread that connects loss to love, and fear to hope.
+        </div>
+
+        <p class="about-text">
+          Andrea's writing is dedicated to everyone who has ever faced an invisible battle, and to the friends, partners, and communities who show up anyway — the ones who make resilience possible.
+        </p>
+
+        <div class="ms-section">
+          <h3 class="ms-heading">Living with Multiple Sclerosis</h3>
+          <p class="about-text">
+            Andrea was diagnosed with Multiple Sclerosis, and that experience is woven into the heart of <em>Black Boots</em>. MS is an unpredictable, often invisible disease of the central nervous system — and Andrea has channeled her journey into a story of hope, community, and the enduring power of love.
+          </p>
+          <p class="about-text">
+            If you or someone you love is navigating life with MS, these organizations offer vital support, research, and resources:
+          </p>
+          <div class="ms-links">
+            <a class="ms-link" href="https://www.nationalmssociety.org" target="_blank" rel="noopener">
+              <div class="ms-link-icon">&#10084;</div>
+              <div>
+                <div class="ms-link-name">National MS Society</div>
+                <div class="ms-link-desc">Research, advocacy, and support for people living with MS</div>
+              </div>
+            </a>
+            <a class="ms-link" href="https://www.cando-ms.org" target="_blank" rel="noopener">
+              <div class="ms-link-icon">&#127775;</div>
+              <div>
+                <div class="ms-link-name">Can Do MS</div>
+                <div class="ms-link-desc">Wellness programs empowering people with MS and their care partners</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary" style="display:inline-block;margin-top:12px;">Get in touch</a>
+      </div>
+
+      <div class="about-photo-wrap fade-up">
+        <div class="about-photo">
+          <img src="andrea-photo.jpg" alt="Andrea M. Erickson at the beach" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+        </div>
+        <div class="about-photo-frame"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Blog / Writing Section ─────────────────────────── -->
+<section id="blog">
+  <div class="inner">
+    <p class="section-label fade-up">Essays &amp; Reflections</p>
+    <h2 class="section-title fade-up">Andrea's Writing</h2>
+    <div class="rule fade-up"></div>
+    <p class="fade-up" style="color:var(--ink-mid);max-width:560px;">
+      Thoughts on living with chronic illness, the writing life, resilience, and the stories we tell ourselves and each other.
+    </p>
+
+    <div class="blog-grid">
+
+      <article class="post-card fade-up">
+        <div class="post-img">
+          <div class="post-img-pattern"></div>
+          <span>Post image coming soon</span>
+        </div>
+        <div class="post-body">
+          <p class="post-tag">Resilience</p>
+          <h3 class="post-title">The Things We Carry — and the Things That Carry Us</h3>
+          <p class="post-excerpt">On the invisible weight of chronic illness, and how the people who love us become the scaffolding that keeps us upright.</p>
+          <p class="post-date">Coming soon</p>
+        </div>
+      </article>
+
+      <article class="post-card fade-up">
+        <div class="post-img">
+          <div class="post-img-pattern"></div>
+          <span>Post image coming soon</span>
+        </div>
+        <div class="post-body">
+          <p class="post-tag">Writing Life</p>
+          <h3 class="post-title">Why I Wrote Black Boots — and Why It Took So Long</h3>
+          <p class="post-excerpt">A reflection on the years between living a story and having the words — and the courage — to put it on the page.</p>
+          <p class="post-date">Coming soon</p>
+        </div>
+      </article>
+
+      <article class="post-card fade-up">
+        <div class="post-img">
+          <div class="post-img-pattern"></div>
+          <span>Post image coming soon</span>
+        </div>
+        <div class="post-body">
+          <p class="post-tag">Community</p>
+          <h3 class="post-title">You Are More Than Your Monster</h3>
+          <p class="post-excerpt">The dedication in my book was not just a dedication. It was everything I wanted to say to every person fighting something the world cannot see.</p>
+          <p class="post-date">Coming soon</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="blog-cta fade-up">
+      <p style="color:var(--ink-lite);margin-bottom:20px;font-style:italic;">Blog posts coming soon. Sign up to be notified.</p>
+      <a href="#contact" class="btn btn-burgundy btn">Stay Updated</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact Section ─────────────────────────────────── -->
+<section id="contact">
+  <div class="inner">
+    <div class="contact-grid">
+
+      <div class="contact-info fade-up">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">Connect with Andrea</h2>
+        <div class="rule"></div>
+        <p class="contact-text">
+          Whether you're a reader who wants to share how <em>Black Boots</em> moved you, a journalist or book club looking to connect, or someone who just wants to say hello — Andrea would love to hear from you.
+        </p>
+
+        <div class="contact-links">
+          <a class="contact-link" href="https://www.amazon.com/Black-Boots-Journey-Resilience-Love/dp/1669807878" target="_blank" rel="noopener">
+            <div class="contact-link-icon">&#128214;</div>
+            <span>Buy <em>Black Boots</em> on Amazon</span>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/andrea-erickson-96ba311/" target="_blank" rel="noopener">
+            <div class="contact-link-icon">&#128101;</div>
+            <span>Connect on LinkedIn</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form fade-up">
+        <h3>Send a Message</h3>
+        <form
+          name="contact"
+          method="POST"
+          action="#"
+          onsubmit="handleSubmit(event)"
+        >
+          <div class="form-group">
+            <label class="form-label" for="name">Your Name</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="subject">Subject</label>
+            <input class="form-input" type="text" id="subject" name="subject" placeholder="Book clubs, press, reader mail…" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Your message…" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ──────────────────────────────────────────── -->
+<footer>
+  <strong>Andrea M. Erickson</strong>
+  <div class="footer-rule"></div>
+  <p>Author of <em>Black Boots: A Journey of Resilience and Love</em></p>
+  <p style="margin-top:8px;">&copy; <span id="year"></span> Andrea M. Erickson. All rights reserved.</p>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Form stub
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Message Sent!';
+    btn.style.background = 'var(--sage)';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 3000);
+  }
+</script>
+
+</body>
+</html>
