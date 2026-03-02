@@ -557,6 +557,142 @@
       margin: 32px 0;
     }
 
+    /* ── Also By Section ─────────────────────────────── */
+    .also-by {
+      margin-top: 80px;
+      padding-top: 64px;
+      border-top: 1px solid var(--cream-dark);
+    }
+
+    .also-by-label {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .also-by-label::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--cream-dark);
+    }
+
+    .also-by-label span {
+      position: relative;
+      background: var(--white);
+      padding: 0 20px;
+      font-size: .75rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--bark);
+    }
+
+    .also-by-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .also-card {
+      display: flex;
+      gap: 24px;
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: 6px;
+      padding: 28px;
+      transition: all .3s;
+    }
+
+    .also-card:hover {
+      border-color: rgba(93,126,148,.3);
+      box-shadow: 0 8px 28px rgba(30,21,16,.08);
+      transform: translateY(-2px);
+    }
+
+    .also-cover {
+      width: 100px;
+      flex-shrink: 0;
+      border-radius: 3px 8px 8px 3px;
+      box-shadow: -3px 3px 0 rgba(30,21,16,.12), 0 4px 16px rgba(30,21,16,.1);
+      object-fit: cover;
+    }
+
+    .also-cover--placeholder {
+      width: 100px;
+      aspect-ratio: 3/4;
+      background: linear-gradient(160deg, var(--cream-dark), #e0d8c0);
+      border-radius: 3px 8px 8px 3px;
+      border: 1px dashed rgba(93,126,148,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .coming-soon-inner {
+      text-align: center;
+      color: var(--ink-lite);
+      font-size: .7rem;
+      font-style: italic;
+    }
+
+    .coming-soon-icon {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .also-body { flex: 1; min-width: 0; }
+
+    .also-tag {
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    .also-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .also-subtitle {
+      font-size: .78rem;
+      color: var(--ink-lite);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .also-desc {
+      font-size: .87rem;
+      color: var(--ink-mid);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .also-link {
+      font-size: .78rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--bark);
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    .also-link:hover { color: var(--bark-lt); }
+
+    .also-card--coming-soon { opacity: .85; }
+
+    @media (max-width: 700px) {
+      .also-by-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── MS Section (within About) ───────────────────── */
     .ms-section {
       margin: 36px 0 32px;
@@ -881,7 +1017,7 @@
 <nav>
   <span class="nav-logo">Andrea M. Erickson</span>
   <ul class="nav-links">
-    <li><a href="#book">The Book</a></li>
+    <li><a href="#book">Books</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#blog">Writing</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -900,7 +1036,7 @@
         Writing stories of resilience, love, and the quiet courage it takes to keep moving forward — even when the path is uncertain.
       </p>
       <div class="btn-group">
-        <a href="#book" class="btn btn-primary">Discover the Book</a>
+        <a href="#book" class="btn btn-primary">Discover Her Books</a>
         <a href="#about" class="btn btn-outline">About Andrea</a>
       </div>
     </div>
@@ -933,7 +1069,7 @@
 
       <!-- Book details -->
       <div class="book-content fade-up">
-        <p class="section-label">Now Available</p>
+        <p class="section-label">Featured Book</p>
         <h2 class="section-title">Black Boots</h2>
         <p style="font-family:var(--serif);font-style:italic;color:var(--ink-mid);margin-bottom:20px;font-size:1.05rem;">A Journey of Resilience and Love</p>
         <div class="rule"></div>
@@ -953,7 +1089,7 @@
           <em>Black Boots</em> is a story about a young woman coming of age while living with the often hidden — but always lurking — presence of a chronic illness. As Goldie navigates loss, love, and self-discovery, she travels through Europe, Florida, and the back roads of New England, encountering a vivid cast of characters who shape her along the way.
         </p>
         <p class="book-synopsis">
-          Woven throughout is the gradually relentless presence of Multiple Sclerosis: how it shadows ordinary moments, how it changes plans, and how — against all odds — Goldie finds a way to not just survive, but to thrive. Beautifully written and deeply human, this is more than a memoir of illness. It is a portrait of the enduring power of community, love, and an unbreakable spirit.
+          Woven throughout is the gradual and relentless presence of Multiple Sclerosis: how it shadows ordinary moments, how it changes plans, and how — against all odds — Goldie finds a way to not just survive, but to thrive. Beautifully written and deeply human, this is more than a memoir of illness. It is a portrait of the enduring power of community, love, and an unbreakable spirit.
         </p>
 
         <div class="book-tagline">
@@ -1005,6 +1141,47 @@
 
       </div>
     </div>
+
+    <!-- ── Also By Andrea ──────────────────────────────── -->
+    <div class="also-by fade-up">
+      <div class="also-by-label">
+        <span>Also by Andrea</span>
+      </div>
+
+      <div class="also-by-grid">
+
+        <!-- Metamorphosis -->
+        <div class="also-card">
+          <img src="metamorphosis-cover.jpg" alt="Metamorphosis: Changes of the Heart — by Andrea Erickson" class="also-cover" />
+          <div class="also-body">
+            <p class="also-tag">Poetry Collection</p>
+            <h3 class="also-title">Metamorphosis: Changes of the Heart</h3>
+            <p class="also-subtitle">Illustrations by Judith Gosse</p>
+            <p class="also-desc">A collection of poems exploring the pathways that have touched our lives, arranged in four stages — Awakening, Growth, Struggle, and Rebirth. An invitation to celebrate your own metamorphosis.</p>
+            <a class="also-link" href="https://www.amazon.com/Metamorphosis-Changes-heart-Andrea-Erickson/dp/B0CD98NKWP" target="_blank" rel="noopener">Buy on Amazon →</a>
+          </div>
+        </div>
+
+        <!-- Sequel teaser -->
+        <div class="also-card also-card--coming-soon">
+          <div class="also-cover also-cover--placeholder">
+            <div class="coming-soon-inner">
+              <div class="coming-soon-icon">&#9998;</div>
+              <p>Coming Soon</p>
+            </div>
+          </div>
+          <div class="also-body">
+            <p class="also-tag">In Progress</p>
+            <h3 class="also-title">Black Boots — The Sequel</h3>
+            <p class="also-subtitle">Continuing the journey</p>
+            <p class="also-desc">Andrea is currently at work on the follow-up to <em>Black Boots</em>. The story of Goldie continues — more life, more love, and more hard-won wisdom from the road. Stay tuned.</p>
+            <a class="also-link" href="#contact">Stay Updated →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
