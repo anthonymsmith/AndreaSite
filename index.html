@@ -14,10 +14,10 @@
     :root {
       --cream:       #FDFAF0;
       --cream-dark:  #F0ECCF;
-      --bark:        #8C4A2F;
-      --bark-lt:     #A85C3C;
-      --blue:        #1D3557;
-      --blue-lt:     #4A80B8;
+      --bark:        #9E3D28;
+      --bark-lt:     #BE5038;
+      --blue:        #5B8DB8;
+      --blue-lt:     #89B4D8;
       --sage:        #7A9171;
       --amber:       #B07D2A;
       --ink:         #1E1510;
@@ -87,7 +87,7 @@
     /* ── Hero ─────────────────────────────────────────── */
     #hero {
       min-height: 92vh;
-      background: linear-gradient(150deg, #1A0E08 0%, #2A1608 50%, #18120A 100%);
+      background: linear-gradient(150deg, #EAF2F8 0%, #F8F4EA 55%, #EDF5F8 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -101,8 +101,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(29,53,87,.12) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 15% 80%, rgba(122,145,113,.2) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(91,141,184,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 15% 80%, rgba(122,145,113,.12) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -116,13 +116,13 @@
       align-items: center;
     }
 
-    .hero-text { color: var(--cream); }
+    .hero-text { color: var(--ink); }
 
     .hero-eyebrow {
       font-size: .8rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--blue-lt);
+      color: var(--blue);
       margin-bottom: 20px;
     }
 
@@ -136,13 +136,13 @@
 
     .hero-title em {
       font-style: italic;
-      color: var(--blue-lt);
+      color: var(--blue);
     }
 
     .hero-subtitle {
       font-size: 1.1rem;
       line-height: 1.7;
-      color: rgba(245,240,232,.78);
+      color: var(--ink-mid);
       margin-bottom: 40px;
       max-width: 440px;
     }
@@ -166,13 +166,13 @@
       color: var(--white);
       font-weight: 500;
     }
-    .btn-primary:hover { background: var(--blue-lt); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(29,53,87,.4); }
+    .btn-primary:hover { background: var(--blue-lt); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(91,141,184,.4); }
 
     .btn-outline {
-      border: 1px solid rgba(253,250,240,.4);
-      color: var(--cream);
+      border: 1px solid rgba(30,21,16,.3);
+      color: var(--ink);
     }
-    .btn-outline:hover { border-color: var(--blue-lt); color: var(--blue-lt); transform: translateY(-2px); }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
 
     /* Book cover placeholder */
     .hero-book {
@@ -533,7 +533,7 @@
     .about-photo-frame {
       position: absolute;
       top: 16px; left: 16px; right: -16px; bottom: -16px;
-      border: 1px solid rgba(29,53,87,.3);
+      border: 1px solid rgba(91,141,184,.3);
       border-radius: 4px;
       z-index: -1;
     }
@@ -606,7 +606,7 @@
     }
 
     .also-card:hover {
-      border-color: rgba(29,53,87,.3);
+      border-color: rgba(91,141,184,.3);
       box-shadow: 0 8px 28px rgba(30,21,16,.08);
       transform: translateY(-2px);
     }
@@ -624,7 +624,7 @@
       aspect-ratio: 3/4;
       background: linear-gradient(160deg, var(--cream-dark), #e0d8c0);
       border-radius: 3px 8px 8px 3px;
-      border: 1px dashed rgba(29,53,87,.3);
+      border: 1px dashed rgba(91,141,184,.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -697,9 +697,9 @@
     .ms-section {
       margin: 36px 0 32px;
       padding: 32px;
-      background: rgba(29,53,87,.08);
+      background: rgba(91,141,184,.08);
       border-radius: 6px;
-      border: 1px solid rgba(29,53,87,.2);
+      border: 1px solid rgba(91,141,184,.2);
     }
 
     .ms-heading {
@@ -723,7 +723,7 @@
       gap: 16px;
       padding: 16px 20px;
       background: var(--white);
-      border: 1px solid rgba(29,53,87,.2);
+      border: 1px solid rgba(91,141,184,.2);
       border-radius: 4px;
       transition: all .25s;
     }
@@ -731,7 +731,7 @@
     .ms-link:hover {
       border-color: var(--blue);
       transform: translateX(4px);
-      box-shadow: 0 4px 16px rgba(29,53,87,.15);
+      box-shadow: 0 4px 16px rgba(91,141,184,.15);
     }
 
     .ms-link-icon {
@@ -776,7 +776,7 @@
     .post-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 40px rgba(30,21,16,.12);
-      border-color: rgba(29,53,87,.25);
+      border-color: rgba(91,141,184,.25);
     }
 
     .post-img {
