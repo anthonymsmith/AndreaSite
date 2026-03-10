@@ -16,8 +16,8 @@
       --cream-dark:  #F0ECCF;
       --bark:        #8C4A2F;
       --bark-lt:     #A85C3C;
-      --blue:        #5D7E94;
-      --blue-lt:     #7A9DB5;
+      --blue:        #1D3557;
+      --blue-lt:     #4A80B8;
       --sage:        #7A9171;
       --amber:       #B07D2A;
       --ink:         #1E1510;
@@ -101,7 +101,7 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(93,126,148,.12) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(29,53,87,.12) 0%, transparent 70%),
         radial-gradient(ellipse 40% 60% at 15% 80%, rgba(122,145,113,.2) 0%, transparent 60%);
       pointer-events: none;
     }
@@ -166,7 +166,7 @@
       color: var(--white);
       font-weight: 500;
     }
-    .btn-primary:hover { background: var(--blue-lt); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(93,126,148,.4); }
+    .btn-primary:hover { background: var(--blue-lt); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(29,53,87,.4); }
 
     .btn-outline {
       border: 1px solid rgba(253,250,240,.4);
@@ -533,7 +533,7 @@
     .about-photo-frame {
       position: absolute;
       top: 16px; left: 16px; right: -16px; bottom: -16px;
-      border: 1px solid rgba(93,126,148,.3);
+      border: 1px solid rgba(29,53,87,.3);
       border-radius: 4px;
       z-index: -1;
     }
@@ -606,7 +606,7 @@
     }
 
     .also-card:hover {
-      border-color: rgba(93,126,148,.3);
+      border-color: rgba(29,53,87,.3);
       box-shadow: 0 8px 28px rgba(30,21,16,.08);
       transform: translateY(-2px);
     }
@@ -624,7 +624,7 @@
       aspect-ratio: 3/4;
       background: linear-gradient(160deg, var(--cream-dark), #e0d8c0);
       border-radius: 3px 8px 8px 3px;
-      border: 1px dashed rgba(93,126,148,.3);
+      border: 1px dashed rgba(29,53,87,.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -697,9 +697,9 @@
     .ms-section {
       margin: 36px 0 32px;
       padding: 32px;
-      background: rgba(93,126,148,.08);
+      background: rgba(29,53,87,.08);
       border-radius: 6px;
-      border: 1px solid rgba(93,126,148,.2);
+      border: 1px solid rgba(29,53,87,.2);
     }
 
     .ms-heading {
@@ -723,7 +723,7 @@
       gap: 16px;
       padding: 16px 20px;
       background: var(--white);
-      border: 1px solid rgba(93,126,148,.2);
+      border: 1px solid rgba(29,53,87,.2);
       border-radius: 4px;
       transition: all .25s;
     }
@@ -731,7 +731,7 @@
     .ms-link:hover {
       border-color: var(--blue);
       transform: translateX(4px);
-      box-shadow: 0 4px 16px rgba(93,126,148,.15);
+      box-shadow: 0 4px 16px rgba(29,53,87,.15);
     }
 
     .ms-link-icon {
@@ -776,7 +776,7 @@
     .post-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 40px rgba(30,21,16,.12);
-      border-color: rgba(93,126,148,.25);
+      border-color: rgba(29,53,87,.25);
     }
 
     .post-img {
@@ -999,6 +999,69 @@
       .contact-form { padding: 28px 20px; }
     }
 
+    /* ── Personal Note Section ───────────────────────── */
+    #note { background: var(--cream-dark); }
+
+    .note-card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 6px;
+      padding: 56px 64px;
+      box-shadow: 0 4px 32px rgba(30,21,16,.1);
+      border-top: 3px solid var(--blue);
+    }
+
+    .note-intro {
+      font-size: 1.05rem;
+      color: var(--ink-mid);
+      margin-bottom: 40px;
+      font-style: italic;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .note-img-wrap { margin-bottom: 40px; }
+
+    .note-img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 2px 16px rgba(30,21,16,.1);
+    }
+
+    .note-placeholder {
+      width: 100%;
+      min-height: 260px;
+      background: var(--cream);
+      border: 2px dashed var(--cream-dark);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-lite);
+      font-style: italic;
+      font-size: .85rem;
+    }
+
+    .signature-wrap {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+
+    .signature-img { max-width: 220px; }
+
+    .signature-placeholder {
+      font-style: italic;
+      color: var(--ink-lite);
+      font-size: .85rem;
+      text-align: right;
+    }
+
+    @media (max-width: 700px) {
+      .note-card { padding: 32px 24px; }
+    }
+
     /* ── Scroll animation ─────────────────────────────── */
     .fade-up {
       opacity: 0;
@@ -1019,6 +1082,7 @@
   <ul class="nav-links">
     <li><a href="#book">Books</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#note">From Andrea</a></li>
     <li><a href="#blog">Writing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -1247,6 +1311,38 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ── Personal Note Section ──────────────────────────── -->
+<section id="note">
+  <div class="inner">
+    <p class="section-label fade-up" style="text-align:center;">From the Author</p>
+    <h2 class="section-title fade-up" style="text-align:center;">A Note from Andrea</h2>
+    <div class="rule fade-up" style="margin-left:auto;margin-right:auto;"></div>
+
+    <div class="note-card fade-up">
+      <p class="note-intro">
+        Thank you for being here. Every reader who picks up <em>Black Boots</em> becomes part of Goldie's story — and mine. I wrote this book because I needed to make sense of something enormous, and because I believed — even in the hardest moments — that stories have the power to heal. I'm grateful, more than words can say, that you found your way to these pages.
+      </p>
+
+      <!-- Swap out .note-placeholder for <img> when Andrea's note image is ready -->
+      <div class="note-img-wrap">
+        <div class="note-placeholder">
+          [ Andrea's handwritten note — image coming soon ]
+        </div>
+        <!-- <img src="andrea-note.jpg" alt="A personal note from Andrea M. Erickson" class="note-img" /> -->
+      </div>
+
+      <!-- Swap out .signature-placeholder for <img> when signature image is ready -->
+      <div class="signature-wrap">
+        <p class="signature-placeholder">
+          [ Andrea's signature — image coming soon ]
+        </p>
+        <!-- <img src="andrea-signature.png" alt="Andrea M. Erickson" class="signature-img" /> -->
+      </div>
+    </div>
+
   </div>
 </section>
 
