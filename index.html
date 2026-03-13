@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Andrea M. Erickson — Author</title>
+  <title>Andrea M. Erickson — andreamerickson.com</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
@@ -1078,13 +1078,13 @@
 
 <!-- ── Navigation ─────────────────────────────────────── -->
 <nav>
-  <span class="nav-logo">Andrea M. Erickson</span>
+  <span class="nav-logo">andreamerickson.com</span>
   <ul class="nav-links">
-    <li><a href="#book">Books</a></li>
+    <li><a href="#hero">Home</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#note">From Andrea</a></li>
-    <li><a href="#blog">Writing</a></li>
+    <li><a href="#book">Books</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#blog">Blog</a></li>
   </ul>
 </nav>
 
@@ -1093,27 +1093,51 @@
   <div class="hero-inner">
     <div class="hero-text">
       <p class="hero-eyebrow">Author &amp; Storyteller</p>
-      <h1 class="hero-title">
-        Andrea M.<br/>Erickson
-      </h1>
+      <h1 class="hero-title">Hi, I'm Andrea</h1>
       <p class="hero-subtitle">
-        Writing stories of resilience, love, and the quiet courage it takes to keep moving forward — even when the path is uncertain.
+        Welcome to my website. I'm the author of <em>Black Boots — A Journey of Resilience and Love</em>, a semi-autobiographical story of Goldie and her MS journey that reflects my own MS story. The site includes links to other MS sites, other books and stories, and links that provide MS information and hope. We're all in this MS world together — let's keep learning and winning through our challenges and victories.
+      </p>
+      <p style="font-family:'Dancing Script',cursive;font-size:1.4rem;color:var(--bark);margin-bottom:32px;line-height:1.6;">
+        My best to each of you,<br/>Andrea
       </p>
       <div class="btn-group">
-        <a href="#book" class="btn btn-primary">Discover Her Books</a>
+        <a href="#book" class="btn btn-primary">My Books</a>
         <a href="#about" class="btn btn-outline">About Andrea</a>
       </div>
     </div>
 
     <div class="hero-book">
-      <div>
-        <img
-          src="book-cover.jpg"
-          alt="Black Boots: A Journey of Resilience and Love — by Andrea M. Erickson"
-          style="width:260px;border-radius:4px 12px 12px 4px;box-shadow:-6px 6px 0 rgba(0,0,0,.35),0 20px 60px rgba(0,0,0,.5);"
-        />
-      </div>
+      <img
+        src="andrea-writing.jpg"
+        alt="Andrea M. Erickson"
+        style="width:320px;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.2);"
+      />
     </div>
+  </div>
+</section>
+
+<!-- ── Newsletter Section ─────────────────────────────── -->
+<section id="newsletter" style="background:var(--blue);padding:64px 24px;">
+  <div class="inner" style="max-width:600px;text-align:center;">
+    <p class="fade-up" style="font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:12px;">Stay Connected</p>
+    <h2 class="fade-up" style="font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--white);margin-bottom:16px;">Join the List</h2>
+    <p class="fade-up" style="color:rgba(255,255,255,.85);margin-bottom:32px;font-size:1rem;line-height:1.7;">
+      Enter your email address to read news about Andrea's upcoming novel about Goldie's new MS stories.
+    </p>
+    <form name="newsletter" method="POST" data-netlify="true" class="fade-up"
+      style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+      <input type="hidden" name="form-name" value="newsletter" />
+      <input
+        type="email" name="email" required
+        placeholder="your@email.com"
+        style="flex:1;min-width:220px;padding:14px 20px;border:none;border-radius:3px;font-family:var(--body);font-size:.95rem;outline:none;"
+      />
+      <button type="submit"
+        style="padding:14px 32px;background:var(--bark);color:var(--white);border:none;border-radius:3px;font-family:var(--body);font-size:.9rem;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:background .2s;"
+        onmouseover="this.style.background='var(--bark-lt)'" onmouseout="this.style.background='var(--bark)'">
+        Sign Up
+      </button>
+    </form>
   </div>
 </section>
 
