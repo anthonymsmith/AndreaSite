@@ -983,9 +983,10 @@
     /* ── Responsive ───────────────────────────────────── */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-book { display: none; }
+      .hero-book { display: flex; justify-content: center; margin-top: 32px; }
+      .hero-book img { width: 260px; }
       .book-grid { grid-template-columns: 1fr; }
-      .book-img-wrap { position: static; display: none; }
+      .book-img-wrap { position: static; display: block; max-width: 240px; margin: 0 auto 40px; }
       .about-grid { grid-template-columns: 1fr; }
       .about-photo-wrap { max-width: 320px; margin: 0 auto; }
       .contact-grid { grid-template-columns: 1fr; }
